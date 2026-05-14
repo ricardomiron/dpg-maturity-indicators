@@ -1,53 +1,249 @@
-# Universal Indicators for Software Maturity (Draft) 
+# Core Indicators
 
-## Introduction
-This document presents a draft of universal indicators for assessing software maturity. 
-Each indicator is categorized under a **pillar** and described with three levels of maturity: **LOW, MED, and HIGH**.
+This document defines the maturity indicators used by the DPG Maturity Model. Each indicator is assessed across three levels and tagged with applicable product types and primary audiences.
 
-## Indicators
-### **Pillar 1: Governance**
-| Indicator | Description | LOW | MED | HIGH |
-|-----------|------------|-----|--------|------|
-| **Governance** | Transparent governance of the product, including ownership and decision-making for new features/product roadmap. For open-source products, articulated and implemented community governance​ | There is no community governance structure in place to direct continued development of the digital tool | Some informal processes for community management exist to direct continued development of the digital tool | Formal community structures (e.g. leadership, technical advisory group, community representatives) exist and are practiced with documented roles and responsibilities in a transparent fashion and are used to direct continued development of the digital tool |
+## Maturity Levels
 
-### **Pillar 2: Data Protection and Security**
-| Indicator | Description | LOW | MED | HIGH |
-|-----------|------------|-----|--------|------|
-| **Secure development and deployment** | Documented security policy, security assessments, security measures, timelines, and vulnerability testing. Software development lifecycle and release processes based on secure practices. | Security by design and privacy by design and by default principles are taken into consideration but not systematically applied. Security scans are occasionally performed. | Security by design and privacy by design and by default principles are taken into consideration and systematically applied. Manual security scans are also systematically performed. | Security by design and privacy by design and by default principles are taken into consideration and systematically applied. Automatic security scans (dynamic and static) are also systematically performed as part of the development processes. All developers and testers follow a secure coding checklist. |
-| **Regulatory data compliance** | Compliance support of the product with relevant data regulations such as GDPR | The product owner acknowledges some aspects of data regulations and does not prevent the implementer from adopting certain compliant practices. However, a comprehensive analysis of the applicable data regulations has not been performed, and its compliance support is basic. | All data protection and privacy regulations applicable to the product have been analyzed for the target market. The product includes measures to facilitate and uphold compliance by the implementer, but it does not routinely monitor for updates or changes in regulations. | The product has a robust compliance framework, including a complete analysis of all applicable data protection and privacy regulations for the target market. It actively supports the implementer in maintaining compliance and systematically tracks updates to requirements or regulations to ensure ongoing conformity. |
-| **Security controls** | Security controls that are supported to protect data at rest and in transit, which include access controls, encryption, security architecture, libraries, and physical access, if applicable. | No security controls or implementation guidance are in place. | Role-based authorization exists if appropriate. Guidance on encrypting all remote access (web interface, APIs) is available to implementors. | Role-based authorization exists if appropriate. All remote access (web interface, APIs) are encrypted by default using current best practices. An independent security audit of the software has taken place within the last twelve months. |
+| Level | Label | What it signals |
+|-------|-------|-----------------|
+| 1 | **Emerging** | The product is functional but key practices are informal or absent. Suitable for early adopters willing to invest in adaptation. |
+| 2 | **Growing** | Core practices are in place and documented. The product can be adopted with moderate effort and has a visible trajectory of improvement. |
+| 3 | **Mature** | Practices are well-established, community-driven, and independently verifiable. The product is ready for adoption at scale with confidence. |
 
-### **Pillar 3: Open Standards**
-| Indicator | Description | LOW | MED | HIGH |
-|-----------|------------|-----|--------|------|
-| **Openness, interoperability, and data standards** | Use of open standards and modular design. Data can be easily exported from the system. | Extracting or importing data into the system usually requires looking at the source code and/or directly accessing the database. | Some APIs are available to access and manage data. There are user-facing interfaces to export core data and metadata in the system (e.g., in CSV format) for further analysis and data transfer purposes. | A robust API is available for key data and metadata exchange needs for the primary business domain, with functional requirements for the API having been developed in conjunction with appropriate country, regional, and global stakeholders. API endpoints exist for core data and metadata elements that adhere to standards developed by an appropriate Standards Development Organization relevant to the tool's business domain. Standards-based API endpoints are used in at least four jurisdictions (e.g., countries or states). |
+Every level is valid. "Emerging" is not a failure — it reflects an early-stage product with room to grow. The model is meant to guide improvement, not gatekeep.
 
-### **Pillar 4: Product Strategy and Roadmap**
-| Indicator | Description | LOW | MED | HIGH |
-|-----------|------------|-----|--------|------|
-| **Product strategy and roadmap** | Availability of a clearly articulated and public roadmap for the product. The prioritization process of new features and timelines involves the community in a structured manner and is based on the target impact of the product. | No software roadmap exists or there is no publicly accessible and routinely maintained platform for new feature requests. | There is a publicly accessible and routinely maintained platform for new feature requests. A software roadmap exists describing currently planned and resourced development activities. | New features and functionality are documented as part of a software roadmap as part of a release cycle. There are forums for community members to discuss new feature requests. A clear prioritization process exists and is utilized for the development of new features and functionality as part of a product backlog. |
+### Audience Tags
 
-### **Pillar 5: Source Code Accessibility**
-| Indicator | Description | LOW | MED | HIGH |
-|-----------|------------|-----|--------|------|
-| **Developer documentation, code structure, and readability** | The Extent to which the product is developer-friendly so that a technical person unfamiliar with the product can contribute. This includes the extent to which the source code is organized and documented and the extent to which other developer-focused documents ease the onboarding process. | Source code not publicly available or not released under an open-source license. | Source code exists on a publicly accessible repository and is licensed under an Open Source Initiative-approved license. | Source code exists on a publicly accessible repository and is licensed under an Open Source Initiative-approved license. The software is structured to allow local customizations and new modules and functionality without requiring the forking of the main code. |
+- 🔧 **Maintainers** — product owners and core development teams
+- 🏗️ **Implementers** — organizations deploying the product in a specific context
+- 💰 **Funders** — donors, investors, and grant-making organizations
+- 🤝 **Contributors** — developers, designers, translators, and other community members
 
-### **Pillar 6: Total Cost of Ownership**
-| Indicator | Description | LOW | MED | HIGH |
-|-----------|------------|-----|--------|------|
-| **Total cost of ownership (TCO)** | Calculations/information on TCO, for example, based on active deployments. The total cost of ownership covers the cost of operating the product over its lifespan, including initial deployments, training, customizations, etc. | Some information on costs is provided but does not cover all aspects of ownership. | High-level budgeting guidance for the tool is available and based on active deployments. | Detailed budget guidance is available covering, for example, cost estimates for a pilot (including capacity building, infrastructure, human resources), annual maintenance, and calculations for end-user capacity building. |
+---
 
-### **Pillar 7: Composability (Suggestion)**
-| Indicator | Description | LOW | MED | HIGH |
-|-----------|------------|-----|--------|------|
-| **Flexible architecture** | The Extent to which the solution's architecture fosters modularity, flexibility, and adaptability. By embracing standardization and interoperability, composability fosters creating and reusing scalable building blocks. This approach drives agility and cost efficiency, empowering teams to respond swiftly to evolving challenges. |The solution's architecture is closer to a monolith than a modular and extensible set of components. Local customizations require forking or direct modification of the main codebase. |A base level of modularity exists and the architecture permits some plug-and-play flexibility.  | Solution has been designed with composability from the start.  Architecture is composed of modern, flexible, and independent microservices.| 
+## Pillar 1: Governance & Community
+
+*How the project is led, how decisions are made, and how the community participates.*
+
+### 1.1 Governance Model
+
+**Applies to:** Software, Data, Content, AI · **Audiences:** 💰🔧🤝
+
+How transparent and structured is the decision-making process?
+
+| Emerging | Growing | Mature |
+|----------|---------|--------|
+| Decisions are made informally by a small group or single organization. No public governance documentation exists. | A governance model is documented and publicly available. Roles, responsibilities, and decision-making processes are defined. | Governance is community-driven with clear pathways for external stakeholders to influence direction. Decision-making is transparent and may involve a steering committee, advisory board, or similar multi-stakeholder structure. |
+
+### 1.2 Community Contribution
+
+**Applies to:** Software, Data, Content, AI · **Audiences:** 🤝🔧💰
+
+How easy is it for others to contribute, and how diverse is the contributor base?
+
+| Emerging | Growing | Mature |
+|----------|---------|--------|
+| Contributions are accepted but there are no formal guidelines or onboarding materials for new contributors. | Contribution guidelines exist (e.g., CONTRIBUTING.md, code of conduct). The project labels good-first-issues and has a documented review process for external contributions. | The project actively lowers barriers to contribution: onboarding documentation, mentorship practices, responsive review processes, and recognition of community work. Contribution guidelines are maintained for multiple contribution types (code, content, translation, testing). |
+
+### 1.3 Product Roadmap
+
+**Applies to:** Software, Data, Content, AI · **Audiences:** 💰🏗️🔧
+
+Is there a visible plan for where the product is heading?
+
+| Emerging | Growing | Mature |
+|----------|---------|--------|
+| No public roadmap. Development priorities are managed internally. | A roadmap is publicly available and updated periodically. It reflects planned features, improvements, or content updates. | The roadmap is actively maintained with community input mechanisms. Priorities are informed by user feedback, implementer needs, and strategic goals. Release timelines are communicated. |
+
+---
+
+## Pillar 2: Technical Quality & Security
+
+*How robust, secure, and well-engineered the product is.*
+
+### 2.1 Quality Assurance
+
+**Applies to:** Software, AI · **Audiences:** 🔧🏗️
+
+What testing and quality practices are in place?
+
+| Emerging | Growing | Mature |
+|----------|---------|--------|
+| Some testing exists but it is ad hoc. No documented QA strategy. | A documented testing strategy covers major functional areas. Automated tests exist and run via continuous integration. | Comprehensive QA practices cover functional, non-functional, and regression testing. CI/CD pipelines run automatically on every change. Test coverage is tracked, and test data and QA reports are available to the community. |
+
+### 2.2 Security Practices
+
+**Applies to:** Software, AI · **Audiences:** 🔧🏗️💰
+
+How are security risks identified and managed?
+
+| Emerging | Growing | Mature |
+|----------|---------|--------|
+| Security is addressed reactively. No formal vulnerability reporting channel exists. | A security policy is published (e.g., SECURITY.md) with a private reporting channel. Dependencies are monitored for known vulnerabilities. | Proactive security practices are in place: regular dependency scanning, static analysis, security audits or penetration testing, and a documented incident response process. The project may hold an OpenSSF Best Practices badge or equivalent. |
+
+### 2.3 Architecture & Extensibility
+
+**Applies to:** Software, AI · **Audiences:** 🔧🏗️
+
+Is the product designed for adaptability and extension?
+
+| Emerging | Growing | Mature |
+|----------|---------|--------|
+| The architecture is functional but tightly coupled or monolithic. Limited ability to configure or extend. | The architecture is modular with documented extension points or configuration options. Components can be adapted independently. | A well-documented, modular architecture supports diverse deployment scenarios. A plugin system or extension framework allows customization without modifying the core. The system is designed for horizontal scalability. |
+
+---
+
+## Pillar 3: Deployment & Usability
+
+*How ready the product is for adoption in new contexts.*
+
+### 3.1 Deployment Tooling
+
+**Applies to:** Software, AI · **Audiences:** 🏗️🔧
+
+How easy is it to install and run the product in a new environment?
+
+| Emerging | Growing | Mature |
+|----------|---------|--------|
+| Installation requires significant manual effort. Instructions may be incomplete or assume deep technical knowledge. | Installation guides are available and reasonably complete. Container images or automated setup scripts exist. | Deployment is well-documented for multiple environments (cloud, on-premise, low-resource). Containerized deployments, infrastructure-as-code, and automated installation verification are available. Troubleshooting guides exist. |
+
+### 3.2 Documentation Depth
+
+**Applies to:** Software, Data, Content, AI · **Audiences:** 🏗️💰🔧🤝
+
+Is documentation sufficient for different audiences to use the product effectively?
+
+| Emerging | Growing | Mature |
+|----------|---------|--------|
+| Documentation exists but is limited in scope — it may cover only one audience or use case, and lacks depth for implementers or decision-makers. | Documentation is organized by audience: administrators, end users, developers, and decision-makers each have relevant materials. Implementation guides are available. | Comprehensive, versioned documentation covers all user types. It includes tutorials, API references, architectural overviews, and implementation guides. Documentation is actively maintained and community contributions are welcomed. |
+
+### 3.3 Internationalization & Localization
+
+**Applies to:** Software, Data, Content, AI · **Audiences:** 🏗️🤝
+
+Can the product be adapted for use in different languages, regions, and cultural contexts?
+
+| Emerging | Growing | Mature |
+|----------|---------|--------|
+| The product is available in one language only. No internationalization framework is in place. | An internationalization framework exists. The product is available in more than one language, or the content/data supports localization. Community translation contributions are possible. | The product supports multiple languages through a mature localization pipeline. Right-to-left languages, local date/number formats, and cultural adaptation are supported. A translation management process (e.g., via Transifex, Weblate) enables community-driven localization. |
+
+### 3.4 Accessibility
+
+**Applies to:** Software, Content, AI · **Audiences:** 🏗️🔧🤝
+
+Can the product be used by people with diverse abilities, including those with disabilities?
+
+| Emerging | Growing | Mature |
+|----------|---------|--------|
+| Accessibility has not been systematically addressed. The product may present barriers for users with disabilities or those using assistive technologies. | Basic accessibility practices are followed. The product owner has assessed the product against a recognized standard (e.g., WCAG 2.1 Level A) and addressed major barriers. Key user-facing interfaces are navigable with assistive technologies. | The product meets or exceeds WCAG 2.1 Level AA or an equivalent accessibility standard. Accessibility testing is part of the QA process. The product owner actively solicits feedback from users with disabilities and documents accessibility conformance. |
+
+---
+
+## Pillar 4: Interoperability & Standards
+
+*How well the product works with other systems and adheres to open standards.*
+
+### 4.1 Open Standards Adoption
+
+**Applies to:** Software, Data, Content, AI · **Audiences:** 🏗️🔧
+
+Does the product use recognized open standards for data exchange, APIs, and formats?
+
+| Emerging | Growing | Mature |
+|----------|---------|--------|
+| The product uses custom formats or interfaces for key functions. Interoperability with other systems requires significant adaptation. | The product uses recognized open standards (e.g., REST, JSON, OpenAPI, FHIR, CSV, RDF) for key interfaces and data exchange. Standards choices are documented. | The product fully embraces open standards across its interfaces. APIs are documented using standard specifications (e.g., OpenAPI, AsyncAPI). Data models align with domain-specific standards where applicable. Conformance is tested and documented. |
+
+### 4.2 Integration Readiness
+
+**Applies to:** Software, AI · **Audiences:** 🏗️🔧
+
+Can the product be integrated into larger systems without modifying its core?
+
+| Emerging | Growing | Mature |
+|----------|---------|--------|
+| Integration requires direct modification of the codebase. No APIs or hooks are exposed for external systems. | APIs or webhooks are available for key functions. Basic integration documentation exists. The product has been successfully integrated with at least one external system. | A well-documented API layer supports integration with third-party systems. The product can participate in a broader ecosystem of building blocks or digital public infrastructure without requiring core modifications. Integration patterns and examples are published. |
+
+---
+
+## Pillar 5: Sustainability & Support
+
+*How viable the product is for the long term and how well product owners support its users.*
+
+### 5.1 Funding & Business Model
+
+**Applies to:** Software, Data, Content, AI · **Audiences:** 💰🔧
+
+Is there a plan for financial sustainability beyond the current funding cycle?
+
+| Emerging | Growing | Mature |
+|----------|---------|--------|
+| Funding is project-based or dependent on a single source. No documented sustainability plan exists. | A sustainability strategy is documented, exploring multiple funding pathways (e.g., grants, service contracts, membership, SaaS). The product owner actively pursues diversification. | A diversified sustainability model is documented and operational, with funding from multiple independent sources. Financial transparency is practiced (e.g., public reporting or open budgets). The product owner demonstrates a track record of navigating funding transitions. |
+
+### 5.2 Maintenance Activity
+
+**Applies to:** Software, Data, Content, AI · **Audiences:** 💰🏗️🤝
+
+Is the product actively maintained and evolving?
+
+| Emerging | Growing | Mature |
+|----------|---------|--------|
+| Updates are infrequent or unpredictable. Release cadence is unclear. | Regular releases follow a predictable cadence. A changelog is maintained. Dependencies are periodically updated. | Active, predictable maintenance with semantic versioning, published release notes, a clear deprecation policy, and timely dependency updates. The project demonstrates sustained activity over multiple years. |
+
+### 5.3 User & Implementer Support
+
+**Applies to:** Software, Data, Content, AI · **Audiences:** 🏗️💰
+
+How are users and implementers supported when they need help?
+
+| Emerging | Growing | Mature |
+|----------|---------|--------|
+| Support is informal — primarily via email or individual contacts. No public support channels. | Public support channels exist (e.g., forum, mailing list, chat). Known issues are tracked publicly. Response times are reasonable but not guaranteed. | Multiple support tiers are available: community support channels, documented FAQ/knowledge base, and optionally commercial support. Issue tracking is public and actively triaged. Implementer onboarding resources are available. |
+
+---
+
+## Pillar 6 (Optional): Adoption & Ecosystem
+
+*Evidence of real-world use, ecosystem strength, and cost transparency. This pillar is optional — it captures information that is highly valuable to funders and implementers but may be harder for early-stage projects to provide. Product owners are encouraged to complete it when they can, but it is not required for a maturity assessment.*
+
+### 6.1 Total Cost of Ownership
+
+**Applies to:** Software, Data, Content, AI · **Audiences:** 💰🏗️
+
+Does the product owner provide transparent information about the costs of adopting and operating the product?
+
+| Emerging | Growing | Mature |
+|----------|---------|--------|
+| No cost guidance is available. Implementers must estimate costs independently. | Basic cost information is published, covering major cost categories (e.g., hosting, staffing, customization, training). General guidance helps implementers plan budgets. | A comprehensive costing framework or TCO model is available, covering infrastructure, human resources, customization, training, and ongoing maintenance. The model is adaptable to different deployment contexts (e.g., cloud vs. on-premise, country income level). Real-world cost examples or case studies are shared. |
+
+### 6.2 Vendor & Implementer Ecosystem
+
+**Applies to:** Software, Data, Content, AI · **Audiences:** 💰🏗️
+
+Are there multiple organizations that can implement, customize, or support the product?
+
+| Emerging | Growing | Mature |
+|----------|---------|--------|
+| The founding organization is the only entity with deep implementation knowledge. No documented efforts to grow an implementer network. | The product owner actively supports ecosystem growth: implementation knowledge is documented and transferable, and at least one external organization has successfully implemented or customized the product. | A healthy ecosystem of vendors and implementers exists across multiple regions. The product owner maintains a partner directory or certification program. Implementation knowledge is fully externalized through documentation, training materials, and community support. |
+
+### 6.3 Adoption Tracking
+
+**Applies to:** Software, Data, Content, AI · **Audiences:** 💰🏗️🔧
+
+Does the product owner track and publish where and how the product is being used?
+
+| Emerging | Growing | Mature |
+|----------|---------|--------|
+| No public information about where the product is deployed or used. Adoption is known informally, if at all. | The product owner tracks deployments and publishes basic adoption data (e.g., number of known implementations, countries, sectors). | Adoption is systematically tracked and publicly reported, including country-level deployment data, sector coverage, and user reach where available. Case studies or implementation stories are published. The product owner actively engages with the implementer community to maintain accurate records. |
+
+---
 
 ## How to Contribute
-We welcome contributions! Please submit a **pull request** to propose changes, improvements, or additional insights.
 
-### Steps to Contribute:
-1. **Fork this repository** and create a new branch.
-2. **Make changes** to the [core-indicators.md](https://github.com/DPGAlliance/CoP-Maturity-Indicators/blob/main/indicators/core-indicators.md) file.
-3. **Submit a pull request** for review.
-4. The Community of Practice will review contributions and finalize updates.
+This model is a living document. We welcome contributions in the form of:
 
+- **Indicator refinements** — clearer rubric language, better examples, edge case coverage
+- **New indicators** — proposals for indicators that address gaps, particularly for data, content, and AI product types
+- **Validation feedback** — experiences applying the model to real products, including where indicators felt unclear or misaligned
+- **Translations** — localized versions of the indicators to support non-English-speaking product owners
+
+Please open an issue or pull request in this repository to contribute.
